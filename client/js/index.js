@@ -24,6 +24,9 @@ document.querySelector('.form').addEventListener('submit', function (event) {
     var tdVolume = document.createElement('td');
     tdVolume.textContent = campos[1].value * campos[2].value;
 
+
+    volumeTotal = volumeTotal + tdVolume;
+
     tr.appendChild(tdVolume);
 
     tbody.appendChild(tr);
