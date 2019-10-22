@@ -6,6 +6,7 @@ class NegociacaoController {
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
 
+        //Passando uma função como parâmetro para o objeto
         this._listaNegociacoes = new ListaNegociacoes(model => this._negocicoesView.update(model));
 
         this._negocicoesView = new NegociacoesView($('#negociacoesView'));
@@ -19,7 +20,6 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault();
         this._listaNegociacoes.adiciona(this._criaNegociacao());
-        this._negocicoesView.update(this._listaNegociacoes);
 
         this._mensagem.texto = 'Negociação adicionada com sucesso';
         this._mensagemView.update(this._mensagem);
